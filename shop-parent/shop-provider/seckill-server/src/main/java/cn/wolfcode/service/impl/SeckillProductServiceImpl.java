@@ -42,7 +42,7 @@ public class SeckillProductServiceImpl implements ISeckillProductService {
         List<Product>  products;
         if ( result.getData()!=null){
              products= (List<Product>) result.getData();
-//            BeanUtils.copyProperties(result.getData(),products);
+            BeanUtils.copyProperties(result.getData(),products);
         } else {
              return (List<SeckillProductVo>) Result.defaultError();
         }
