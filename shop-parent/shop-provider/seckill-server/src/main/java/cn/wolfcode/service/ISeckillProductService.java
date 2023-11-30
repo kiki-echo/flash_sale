@@ -7,4 +7,5 @@ import java.util.List;
 
 
 public interface ISeckillProductService {
+    public List<SeckillProductVo> queryByTime(Integer time);
 }

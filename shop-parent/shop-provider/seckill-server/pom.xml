@@ -59,6 +59,23 @@
             <artifactId>product-api</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+
+        <!-- swagger3：访问路径http://ip:port/swagger-ui/index.html-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!-- knife4j：swagger增强方案，使用doc布局方式 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

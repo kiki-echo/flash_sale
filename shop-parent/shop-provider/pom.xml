@@ -36,5 +36,25 @@
             <artifactId>shop-common</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.9</version>
+        </dependency>
+        <!--因logback日志需要与slf4j配合使用，如下的jar包需要引入-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+
+
     </dependencies>
 </project>

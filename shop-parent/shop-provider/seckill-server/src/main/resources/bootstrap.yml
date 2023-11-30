@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 你的nacos的Ip地址:8848 #nacos中心地址
+        server-addr: 192.168.56.80:8848 #nacos中心地址
         file-extension: yaml # 配置文件格式
         shared-configs:
           - data-id: redis-config-dev.yaml
@@ -13,4 +13,9 @@ spring:
   profiles:
     active: dev # 环境标识
 
-
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: v1.0
+  application-description: springfox swagger 3.0 Demo
+  try-host: http://localhost:${server.port}
