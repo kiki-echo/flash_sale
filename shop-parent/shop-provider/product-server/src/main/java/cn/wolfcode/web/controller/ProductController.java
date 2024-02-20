@@ -16,13 +16,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
-@Slf4j
 @Api(tags = "用户接口类")
 public class ProductController {
     @Autowired
     private IProductService productService;
 
-    @ApiOperation("秒杀商品查询")
+    @ApiOperation("商品查询")
     @RequestMapping("queryProductByIds")
     public Result<List<Product>> queryProductByIds(@RequestParam List<Long> ids) {
 
