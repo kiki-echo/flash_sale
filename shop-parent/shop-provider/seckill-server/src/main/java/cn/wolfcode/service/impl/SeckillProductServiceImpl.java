@@ -68,4 +68,25 @@ public class SeckillProductServiceImpl implements ISeckillProductService {
 
         return seckillProductVos;
     }
+
+    @Override
+    public SeckillProductVo queryProductById(Integer id) {
+        List<Long> ids=new ArrayList<>(id);
+        try{
+            List<Product> data = productFegin.queryProductByIds(ids).getData();
+            if (data==null){
+                return (SeckillProductVo) Result.defaultError();
+            }
+            SeckillProductVo seckillProductVo =new SeckillProductVo();
+            BeanUtils.copyProperties(seckillProduct,seckillProductVo);
+            seckillProductVo.setCurrentCount(seckillProductVo.getCurrentCount());
+            return seckillProductVo;
+        }catch (Exception e){
+            log.error("查询商品失败>>>>>>>>>>"+e);
+        }
+
+
+
+
+    }
 }

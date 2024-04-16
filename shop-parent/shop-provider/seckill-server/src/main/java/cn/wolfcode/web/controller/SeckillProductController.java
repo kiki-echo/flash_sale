@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,11 +24,18 @@ public class SeckillProductController {
     @Autowired
     private ISeckillProductService seckillProductService;
 
-    @ApiOperation("根据查词id查询")
+    @ApiOperation("根据查词time查询")
     @RequestMapping("queryByTime")
     public Result queryByTime(Integer time) {
         List<SeckillProductVo> seckillProductVos = seckillProductService.queryByTime(time);
 
         return Result.success(seckillProductVos);
+    }
+
+    @GetMapping("queryProductById")
+    public Result queryProductById(Long id) {
+
+        SeckillProductVo seckillProductVo = seckillProductService.queryProductById(id);
+        return Result.success(seckillProductVo);
     }
 }
